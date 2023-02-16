@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Tours from "./Tours";
-import "./tours.css";
 
 // ATTENTION!!!!!!!!!!
 // I SWITCHED TO PERMANENT DOMAIN
@@ -43,10 +42,10 @@ function App() {
 
   if (tours.length === 0) {
     return (
-      <main>
-        <div className="title">
+      <main className="main__tours">
+        <div className="title__tours">
           <h2>no tours left</h2>
-          <button className="btn" onClick={() => fetchTours()}>
+          <button className="btn__tours" onClick={() => fetchTours()}>
             refresh
           </button>
         </div>
@@ -55,7 +54,7 @@ function App() {
   }
 
   return (
-    <main>
+    <main className="main__tours">
       <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
