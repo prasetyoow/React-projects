@@ -3,9 +3,9 @@ import Tour from "./Tour";
 const Tours = ({ tours, removeTour }) => {
   return (
     <section>
-      <div className="title">
+      <div className="title__tours">
         <h2>our tours</h2>
-        <div className="underline"></div>
+        <div className="underline__tours"></div>
       </div>
       <div>
         {tours.map((tour) => {
