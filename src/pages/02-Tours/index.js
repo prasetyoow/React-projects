@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
+import { FiArrowLeft } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import Loading from "./Loading";
 import Tours from "./Tours";
 
@@ -54,9 +57,18 @@ function App() {
   }
 
   return (
-    <main className="main__tours">
-      <Tours tours={tours} removeTour={removeTour} />
-    </main>
+    <>
+      <Helmet>
+        <title>Tours</title>
+      </Helmet>
+      <Link to="/" className="link__home">
+        <FiArrowLeft size={30} className="icon-home" />
+        <p className="text-home">Back to Home</p>
+      </Link>
+      <main className="main__tours">
+        <Tours tours={tours} removeTour={removeTour} />
+      </main>
+    </>
   );
 }
 
